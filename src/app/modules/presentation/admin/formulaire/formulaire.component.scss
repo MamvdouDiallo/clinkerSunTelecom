@@ -1,0 +1,182 @@
+.title {
+    font-size: 1rem;
+}
+
+.circle-loader {
+    margin: auto !important;
+}
+.volum-field{
+    position: relative;
+    right: 104%;
+}
+.simulation{
+
+}
+.c_border {
+    border: 1px solid #cbd5e1;
+    padding: 15px;
+    height: 55px;
+    margin-top: 12px;
+    border-radius: 4px;
+}
+
+.use-avatar{
+    color: #00316c !important;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background: #FFFF!important;
+    border: 1px solid #848383bd;
+    border-radius: 4px;
+    .s-32{
+        color: #00316c !important;
+     position: relative;
+     margin: 15px;
+     }
+  }
+  .textError{
+    color: red;
+    text-align: center;
+  }
+  .textOk{
+    color: #00316c;
+    text-align: center;
+  }
+  .c-img{
+      margin-top: 25px;
+  }
+//partie loader
+
+/* Absolute Center Spinner */
+
+.loading {
+    position: fixed;
+    z-index: 999;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+.recherPaCd{
+    font-size: 12px !important;
+    color: #FFFFFF !important;
+}
+
+
+/* Transparent Overlay */
+
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loading:not(:required) {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: -0.5em;
+    border: 15px solid rgba(33, 150, 243, 1.0);
+    border-radius: 100%;
+    border-bottom-color: transparent;
+    -webkit-animation: spinner 1s linear 0s infinite;
+    animation: spinner 1s linear 0s infinite;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+// fin loader

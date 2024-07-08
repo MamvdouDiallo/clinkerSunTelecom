@@ -1,0 +1,50 @@
+<div class="inset-0 flex flex-col min-w-0 sizePage">
+
+    <entete entete="Gestion des roles" [hasSearch]="true" [hasSearchCritere]="false" [hasExport]="true" [hasAjout]="hasAdd" (rechercherGlobal)="rechercherGlobal($event)" (exportPDF)="exportAs($event)" (addItem)="ajoutRole()"  (rechercherCritere)="filterList()" ></entete>
+    <div [hidden]="!isCollapsed">
+        <div class="fuse-widget-front-filtre custom_recherche">
+            <mat-toolbar class="mat-accent m-0 c_backToolbar" style="min-height: 36px !important;">
+                <mat-toolbar-row class="c_back_header">
+                    <div class="recherPaC">Recherche par critère</div>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <form name="searchForm" [formGroup]="searchForm" class="event-form-search w-100-p">
+                <div class="event-form-search w-100-p" fxLayout="row wrap" fxLayout.xs="column" fxFlexFill>
+                    <div fxFlex="50" class="fields pl-2">
+                        <mat-form-field class="fuse-mat-dense mt-6" appearance="outline" fxFlex="100">
+                            <mat-label class="labell">Libellé</mat-label>
+                            <input formControlName="authority" [autocomplete]="'off'" matInput>
+                        </mat-form-field>
+                        <div mat-dialog-actions class="flex items-center justify-center space-x-4 mb-2">
+                            <mat-progress-spinner *ngIf="isSearch2" class="circle-loader2" color="#000000" [mode]="'indeterminate'" [strokeWidth]="4" [value]="2" [diameter]="20">
+                            </mat-progress-spinner>
+                            <button mat-button mat-raised-button [disabled]="isSearch2" type="button" matDialogClose class="submit-button" (click)="searchFilterLocalCritereGlobal()">
+                                <span class="textForm">Rechercher</span>
+                            </button> &nbsp; &nbsp;&nbsp; &nbsp;
+                            <button mat-button mat-raised-button [disabled]="isSearch2" color="red" type="button" (click)="annulerRechercheCritere()" class="submit-buttonRed" style="size: 14px" value="bold">
+                                <span class="textForm">Annuler</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overflow-hidden c-posiDataSource">
+
+        <div class="flex flex-col flex-auto sm:mb-1">
+            <div class="inset-x-0 bottom-0" *ngIf="isLoading">
+                <div class="p-16 sm:p-16 title-chargement font-semibold tracking-tight text-center">
+                    Chargement en cours ...
+                </div>
+            </div>
+            <div class="">
+
+                <tableau [pageIndex]="pageIndex" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [total]="length" [coleurEntete]="headers" [entete]="headers" [data]="datas"  [actions]="btnActions" (changePage)="pageChanged($event)"></tableau>
+            </div>
+
+        </div>
+
+    </div>
+</div>

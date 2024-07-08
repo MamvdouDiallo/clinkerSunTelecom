@@ -1,0 +1,122 @@
+<mat-toolbar class="mat-accent m-0 backToolbar">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="c_formulaire">
+        <span class="c_title dialog-title">{{dialogTitle}}</span>
+        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog" class="closeButton">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="flex flex-col flex-auto min-w-10-0 p-2 md:p-4">
+    <mat-accordion>
+    <div class="flex flex-col w-full p-8">
+        <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+            <mat-expansion-panel-header class="w-full">
+                <div class="w-full flex rec">
+                    <div class="titleReca">Identifiant opérateur de transfert</div>
+                    <button matTooltip="Modifier cette partie" class="butSearchs" mat-icon-button>
+                        <mat-icon  class="collapseButton icon-size-4 c_colorIcom"
+                                  [svgIcon]="'edit'">
+                        </mat-icon>
+                    </button>
+                </div>
+            </mat-expansion-panel-header>
+            <hr class="w-full border-t my-6">
+            <div class="flex flex-auto w-full cSize">
+                <div class="flex flex-col w-full">
+                    <div class="flex items-center grid grid-cols-2 recapCss">
+                        <span class="tReca">code: </span>
+                        <!-- <span
+                            class="tiReca">{{ currentItem?.code}}</span> -->
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Sigle: </span>
+                        <span class="tiReca">{{ currentItem?.sigle }}</span>
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Ninéa: </span>
+                        <!-- <span class="tiReca">{{currentItem?.ninea }}</span> -->
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Régistre de commerce </span>
+
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Capital: </span>
+
+                    </div>
+                </div>
+
+                <div class="flex flex-col w-full">
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Date de constitution: </span>
+
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Représentant légal: </span>
+                        <span class="tiReca">
+                                    {{ currentItem?.responsable?.prenom }} {{ currentItem?.responsable?.nom }}
+                                </span>
+                    </div>
+
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Nature de la personne morale: </span>
+
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Statut juridique</span>
+
+                    </div>
+                    <div class="flex items-center mt-2 grid grid-cols-2 recapCss">
+                        <span class="tReca">Siége sociale</span>
+
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+            <mat-expansion-panel-header class="w-full">
+                <div class="w-full flex rec">
+                    <div class="titleReca">Coordonnées</div>
+                    <button class="butSearchs" mat-icon-button>
+                        <mat-icon class="collapseButton icon-size-4 c_colorIcom"
+                                  [svgIcon]="'edit'">
+                        </mat-icon>
+                    </button>
+                </div>
+            </mat-expansion-panel-header>
+            <hr class="w-full border-t my-6">
+            <div class="flex flex-auto w-full mt-4 cSize">
+                <div class="flex flex-col w-full">
+                    <div class="flex items-center grid grid-cols-2 recapCss">
+                        <span class="tReca">Pays de résidence: </span>
+
+                    </div>
+                    <div class="flex items-center grid grid-cols-2 mt-2 recapCss">
+                        <span class="tReca">Ville: </span>
+
+                    </div>
+                    <div class="flex items-center grid grid-cols-2 recapCss">
+                        <span class="tReca">Numéro téléphone: </span>
+
+                    </div>
+                </div>
+                <div class="flex flex-col w-full">
+
+                    <div class="flex items-center grid grid-cols-2 mt-2 recapCss">
+                        <span class="tReca">Adresse: </span>
+
+                    </div>
+                    <div class="flex items-center grid grid-cols-2 mt-2 recapCss">
+                        <span class="tReca">Email: </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </div>
+
+    </mat-accordion>
+</div>
+

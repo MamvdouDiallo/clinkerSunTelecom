@@ -1,0 +1,60 @@
+<div class="w-full">
+    <entete entete={{title}} [hasSearch]="true" [hasSearchCritere]="true" [hasExport]="true" [hasAjout]="hasAdd"
+        (rechercherGlobal)="rechercherGlobal($event)" (exportPDF)="exportAs($event)" (addItem)="ajoutUtilisateur()"
+        (rechercherCritere)="filterList()"></entete>
+    <div [hidden]="!isCollapsed">
+        <div class="fuse-widget-front-filtre custom_recherche">
+            <mat-toolbar class="mat-accent m-0 c_backToolbar" style="min-height: 36px !important;">
+                <mat-toolbar-row class="c_back_header">
+                    <div class="recherPaC">Recherche par critere</div>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <form name="searchForm" [formGroup]="searchForm" class="event-form-search w-100-p">
+                <div class="event-form-search w-100-p" fxLayout="row wrap" fxLayout.xs="column" fxFlexFill>
+                    <div fxFlex="50" class="fields pl-2 items-center justify-center">
+                        <mat-form-field class="fuse-mat-dense mt-2 mr-2 formInfSearch" appearance="outline"
+                            fxFlex="100">
+                            <mat-label class="labell">Nom d'utilisateur
+                            </mat-label>
+                            <input formControlName="firstName" [autocomplete]="'off'" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="fuse-mat-dense mt-2 mr-2 formInfSearch" appearance="outline"
+                            fxFlex="100">
+                            <mat-label class="labell">Nom</mat-label>
+                            <input formControlName="lastName" [autocomplete]="'off'" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="fuse-mat-dense mt-2 mr-2 formInfSearch" appearance="outline"
+                            fxFlex="100">
+                            <mat-label class="labell">Email</mat-label>
+                            <input formControlName="email" [autocomplete]="'off'" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="fuse-mat-dense mt-2 mr-2 formInfSearch" appearance="outline">
+                            <!--                            <mat-label class="enteteccColor">Téléphone</mat-label>-->
+                            <ngx-mat-intl-tel-input [preferredCountries]="['sn', 'fr']" [enablePlaceholder]="true"
+                                [enableSearch]="true" name="Téléphone " describedBy="Téléphone "
+                                formControlName="telephone"></ngx-mat-intl-tel-input>
+                            <mat-error>Le champs est obligatoire</mat-error>
+                        </mat-form-field>
+                        <div mat-dialog-actions class="flex items-center justify-center space-x-4 mb-2 mt-4">
+                            <mat-progress-spinner *ngIf="isSearch2" class="circle-loader2" color="#000000"
+                                [mode]="'indeterminate'" [strokeWidth]="4" [value]="2" [diameter]="20">
+                            </mat-progress-spinner>
+                            &nbsp;&nbsp; &nbsp;
+                            <button mat-button mat-raised-button [disabled]="isSearch2" type="button"
+                                (click)="annulerRechercheCritere()" class="submit-buttonRed" style="size: 14px"
+                                value="bold">
+                                <span class="textForm">Annuler</span>
+                            </button>
+                            <button mat-button mat-raised-button [disabled]="isSearch2" type="button" matDialogClose
+                                class="submit-button" (click)="rechercherCritere()">
+                                <span class="textForm">Rechercher</span>
+                            </button> &nbsp;
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <app-list></app-list>
+</div>

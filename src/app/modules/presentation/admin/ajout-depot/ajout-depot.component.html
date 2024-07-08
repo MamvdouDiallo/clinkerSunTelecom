@@ -1,0 +1,98 @@
+<mat-toolbar class="mat-accent m-0 backToolbar">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="c_formulaire">
+        <span class="c_title dialog-title">{{dialogTitle}}</span>
+        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog" class="closeButton">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf="isLoader" class="loading"></div>
+<div class="flex flex-col flex-auto min-w-10-0 p-2 md:p-4">
+    <form  [formGroup]="form">
+        <mat-stepper #stepper>
+            <ng-container >
+                <mat-step label="">
+        <div class="flex gap-2 justify-center">
+            <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                <mat-label  value=""  class="enteteccColor">Type dépôt</mat-label>
+                <mat-select (selectionChange)="onSelectionChange($event.value)" formControlName="typeDepotTerme" class="enteteccColor">
+                    <mat-option class="enteteccColor" *ngFor="let type of typeDepoList" [value]="type?.id">
+                        {{type?.libelle}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                <mat-label class="enteteccColor">Taux</mat-label>
+                <input formControlName="taux" matInput [value]="selectedTaux" [disabled]="selectedTaux" (blur)="checkingTaux($event)" type="text" >
+                <mat-error class="topError">
+                    Ce champ est obligatoire
+                </mat-error>
+            </mat-form-field>
+        </div>
+            <div class="flex gap-2 justify-center" >
+                <!-- <ng-select (search)="verificationSolde($event)" (change)="getSolde($event)" fxFlex="50" class="formInfMiddle pr-2 w-1/2" appearance="outline" class="trsss c-ng-select w-1/2" formControlName="client" placeholder="Client *" typeToSearchText="Taper pour rechercher"
+                           clearAllText="Effacer tout" notFoundText="Aucun élément trouvé">
+                    <ng-option *ngFor="let client of clients" [value]="client.id">
+                                            <span [title]="client?.intitule">
+                                                <span>{{client?.intitule}}</span> - <span>{{client?.matricule}}</span>
+                                            </span>
+                    </ng-option>
+                </ng-select> -->
+                <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                    <mat-label class="enteteccColor">Solde compte Courant</mat-label>
+                    <!-- <input [mask]="'separator'" [ngModel]="soldeCompte" [ngModelOptions]="{standalone: true}" [disabled]="true" matInput type="text" [value]="soldeCompte !== undefined ? soldeCompte : ''"/> -->
+                    <mat-error class="topError">
+                        Ce champ est obligatoire
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex gap-2 justify-center">
+                <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                    <mat-label class="enteteccColor">Périodicité</mat-label>
+                    <mat-select ngDefaultControl formControlName="periodiciteCalculInteret" class="enteteccColor">
+                        <mat-option class="enteteccColor" *ngFor="let pr of periodiciteList" [value]="pr?.code">
+                            {{pr?.libelle}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                    <mat-label class="enteteccColor">Nombre Mois </mat-label>
+                    <input  (blur)="checkNbreMois($event)" matInput class="enteteccColor" [autocomplete]="'off'" type="text" formControlName="nbreMois">
+                    <mat-error class="topError">
+                        Ce champ est obligatoire
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="gap-2 ">
+                <mat-form-field appearance="outline" class="fuse-mat-dense w-1/2">
+                    <mat-label class="enteteccColor">Montant dépôt <span *ngIf="this.selectedItem?.montantMin && this.selectedItem?.montantMax">(Min: {{this.selectedItem?.montantMin | number: '1.0-0':'fr'}} - Max: {{this.selectedItem?.montantMax | number: '1.0-0':'fr'}})</span></mat-label>
+                    <input (blur)="checkCapital($event)" matInput class="enteteccColor" [autocomplete]="'off'" type="text" formControlName="capitalInitial">
+                    <mat-error class="topError">
+                        Ce champ est obligatoire
+                    </mat-error>
+                </mat-form-field>
+
+                <div *ngIf="(soldeCompte < depotForm.get('capitalInitial').value)" style="color: red">Votre solde compte est inférieur au montant dépôt </div>
+            </div>
+                    <div mat-dialog-actions class="flex items-center justify-center space-x-4">
+                        <button
+                                [disabled]="(soldeCompte < depotForm.get('capitalInitial').value) || depotForm.get('typeDepotTerme').value =='' || !depotForm.get('taux').value || depotForm.get('client').value =='' || depotForm.get('capitalInitial').value ==''|| isdisabled == true" (click)="simulation(stepper)" mat-raised-button class="submit-button" aria-label="VALIDER"
+                                  type="button">
+                            <span class="textForm">Suivant</span>
+                        </button>&nbsp;
+                            <div *ngIf="isLoad">
+                                <mat-progress-spinner class="circle-loader" color="#000000" [mode]="'indeterminate'" [strokeWidth]="4" [value]="2" [diameter]="40">
+                                </mat-progress-spinner>
+                            </div>
+                    </div>
+                </mat-step>
+            </ng-container>
+
+        </mat-stepper>
+
+
+    </form>
+
+
+
+</div>

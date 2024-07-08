@@ -1,0 +1,309 @@
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+mat-tab-label {
+    color: #084480 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif !important;
+}
+
+.renouvellement {
+    color: rgb(255, 136, 0);
+}
+
+.typeNumber{
+    display: flex;
+    justify-content: end !important;
+}
+.titleFormat {
+    color: #FFFFFF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif !important;
+    font-size: 1.4em;
+}
+.c-nombre{
+    display: flex;
+    //justify-content: end;
+}
+.c-text-item {
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+.c-montant {
+    float: right;
+    font-size: 13px;
+}
+
+.c-date {
+    font-size: 13px;
+}
+
+th.mat-mdc-header-cell:first-of-type,
+td.mat-mdc-cell:first-of-type,
+td.mat-mdc-footer-cell:first-of-type {
+    padding-left: 4px;
+}
+
+td {
+    font-size: 12px;
+}
+
+.isShow {
+    display: inline;
+}
+
+.isNotShow {
+    display: none;
+}
+
+.c-spinner {
+    display: flex;
+    gap: 5px;
+}
+
+.particulieres {
+    color: #084480;
+}
+
+.contentColor {
+    color: #000000 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 14px !important;
+}
+
+.sizePage {
+    width: 100%;
+}
+
+.tableAction {
+    text-align: center;
+    .btn-default {
+        border-radius: 5px !important;
+        border: 1px solid #000000;
+        width: 30px;
+    }
+}
+
+.select {
+    min-width: 150px;
+    min-height: 40px;
+    margin: 15px;
+}
+
+.event-form-dialog {
+    min-height: 10rem;
+}
+
+
+.posiTable {
+    height: 160px !important;
+   // background-image: url('../../../../../assets/images/4.jpg') !important;
+    background-size: cover;
+}
+
+.iconAction1 {
+    fill: aliceblue;
+    color: white;
+}
+
+.c-iconRecord {
+    color: #df3b3b !important;
+}
+
+@media screen and (max-width: 840px) {
+    .titleFormat {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 816px) {
+    .titleFormat {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 794px) {
+    .titleFormat {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 686px) {
+    .w-full {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .w-full {
+        width: auto !important;
+    }
+}
+
+.c-paginator {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.txt-tronque {
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    border: 2px solid #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #1a1616 !important;
+}
+//partie loader
+
+/* Absolute Center Spinner */
+
+.loading {
+    position: fixed;
+    z-index: 999;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+.recherPaCd{
+    font-size: 12px !important;
+    color: #FFFFFF !important;
+}
+
+
+/* Transparent Overlay */
+
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loading:not(:required) {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: -0.5em;
+    border: 15px solid rgba(33, 150, 243, 1.0);
+    border-radius: 100%;
+    border-bottom-color: transparent;
+    -webkit-animation: spinner 1s linear 0s infinite;
+    animation: spinner 1s linear 0s infinite;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+// fin loader
+
+
+
+//Mon css
+// .mat-mdc-paginator-container {
+//     background-color: #978b8b;
+//     color: white;
+//     border-radius: 30px;
+//     width: 150px;
+//     border: 2px solid#185bc3;
+// }
+
+// .mat-mdc-paginator-range-actions
+// {
+//     background-color: #185bc3;
+//     border-radius: 30px;
+// }
+

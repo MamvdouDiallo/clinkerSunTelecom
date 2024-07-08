@@ -1,0 +1,94 @@
+.title {
+    font-size: 1rem;
+}
+
+.circle-loader {
+    margin: auto !important;
+}
+
+.use-avatar {
+    overflow: hidden;
+    width: 100%;
+    height: 48px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    .s-32 {
+        color: #FFFFFF !important;
+        position: relative;
+        margin: 15px;
+    }
+}
+
+.file-error {
+    margin-top: -12px;
+}
+
+.user-avatar:hover {
+    border: #0B71B8 dotted 3px;
+}
+
+.pr-haut {
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    mat-form-field {
+        width: 50%;
+    }
+}
+
+.c-image {
+    cursor: pointer;
+}
+
+
+.image mat-icon.show {
+    margin: 60px 50px;
+    position: absolute;
+    cursor: pointer;
+    display: none !important;
+}
+
+.image {
+    margin: 0 10px;
+    padding: 0 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    .titleImage {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: 700;
+    }
+    .myImg {
+        height: 120px;
+        border-radius: 8px;
+    }
+}
+
+.delete {
+    margin-top: -16px;
+    margin-left: 112px;
+    cursor: pointer;
+}
+
+.progressDelete {
+    position: absolute !important;
+    margin-top: -18px;
+    margin-left: 128px;
+    cursor: pointer;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+.mat-mdc-button.mat-accent:not(.mat-button-disabled) .mat-icon,
+.mat-mdc-icon-button.mat-accent:not(.mat-button-disabled) .mat-icon,
+.mat-mdc-outlined-button.mat-accent:not(.mat-button-disabled) .mat-icon {
+    --tw-text-opacity: 1 !important;
+    color: white !important;
+}
+
+.topError {
+    margin-top: 15px;
+}

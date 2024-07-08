@@ -1,0 +1,1641 @@
+@import "./variables.scss";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
+.ng-select {
+    //padding-bottom: 0 !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-infix {
+    display: flex !important;
+}
+
+.c-ng-select .ng-dropdown-panel.ng-select-bottom {
+    top: calc(100% - -0.0em);
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.ng-dropdown-panel.ng-select-bottom {
+    top: calc(100% - -0.0em);
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.mycssSnackbarRed .mat-mdc-snack-bar-container {
+    font-size: 13px !important;
+    color: #FFFFFF !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    background-color: $redColor !important;
+}
+
+.mat-mdc-snack-bar-label.mdc-snackbar__label {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    white-space: pre-wrap
+}
+
+.mycssSnackbarRed.mat-mdc-snack-bar-container {
+    .mdc-snackbar__surface {
+        background: $redColor;
+
+        .mat-mdc-button {
+            color: #FFFFFF !important;
+        }
+    }
+
+    .mat-mdc-snack-bar-label.mdc-snackbar__label {
+        color: #FFFFFF !important;
+        font-weight: 500;
+        white-space: pre-wrap
+    }
+}
+
+.mycssSnackbarGreen .mat-mdc-snack-bar-container {
+    font-size: 13px !important;
+    color: #FFFFFF !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    background-color: #43a14c !important;
+}
+
+.mat-mdc-snack-bar-label.mdc-snackbar__label {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    white-space: pre-wrap
+}
+
+.mycssSnackbarGreen.mat-mdc-snack-bar-container {
+    .mdc-snackbar__surface {
+        background: #43a14c;
+
+        .mat-mdc-button {
+            color: #FFFFFF !important;
+        }
+    }
+
+    .mat-mdc-snack-bar-label.mdc-snackbar__label {
+        color: #FFFFFF !important;
+        font-weight: 500;
+        white-space: pre-wrap
+    }
+}
+
+border-tt{
+    border: 1px solid #f3903d !important;
+}
+
+.border-t {
+    border: 1px solid #f1f5f9;
+}
+
+
+.fuse-mat-button-large {
+    color: #FFFFFF !important;
+}
+
+.mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+    background-color: #FFFFFF !important;
+    color: #1a1616 !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-text-field__input {
+    color: black !important;
+}
+
+.tableAction {
+    display: flex;
+}
+
+.submit-button {
+    width: auto;
+    height: auto;
+    color: #FFFFFF !important;
+    background: #40b54b 0% 0% no-repeat padding-box !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    &:hover {
+        background: #f3903d !important;
+        border: 2px solid #fff !important;
+        .textForms {
+            color: #fff;
+        }
+    }
+}
+
+.submit-buttonRed {
+    width: auto;
+    height: auto;
+    color: #FFFFFF !important;
+    background-color: $redColor !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+.textForm {
+    text-align: center;
+    font: normal normal normal 20px/13px Microsoft Sans Serif, sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 12px;
+}
+
+.submit-buttonAdd {
+    width: 85px;
+    height: 24px;
+    text-align: center;
+    font: normal normal normal 20px/13px Microsoft Sans Serif, sans-serif;
+    letter-spacing: 0px;
+    background-color: #FFFFFFFF !important;
+
+    .icon-color {
+        color: #1e293b !important;
+    }
+}
+submit-button-grid {
+    width: auto;
+    height: auto;
+    color: #FFFFFF !important;
+    background: #40b54b 0% 0% no-repeat padding-box !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+.iconAction {
+    cursor: pointer;
+    color: #16ba55;
+}
+
+.circle-loader {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field.mat-mdc-form-field-appearance-fill.fuse-mat-no-subscript .mat-mdc-form-field-wrapper {
+    max-width: 270px;
+    color: black;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field.mat-mdc-form-field-appearance-fill.fuse-mat-dense .mat-mdc-form-field-wrapper .mat-mdc-form-field-flex {
+    min-width: 270px;
+}
+
+.mat-mdc-form-field.mat-mdc-form-field-appearance-fill.fuse-mat-no-subscript {
+    background-color: #FFFFFF;
+    border-radius: 7px;
+}
+
+.mat-mdc-dialog-container {
+    padding: 0 0 25px !important;
+}
+
+.form mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.formInf {
+    width: 49%;
+}
+
+.formSearch mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.formSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.formInfSearch {
+    width: 24%;
+}
+
+.event-form-search {
+    padding: 10px;
+}
+
+.file-error {
+    color: $redColor !important;
+    font-size: 11px !important;
+    margin-top: -18px;
+}
+
+.mt-0 {
+    margin-top: 0.4rem !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field.mat-mdc-form-field-appearance-fill .mat-mdc-form-field-wrapper {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    justify-content: space-between;
+}
+
+.badge-success {
+    background-color: rgb(46, 187, 46) !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+.badge-success1 {
+    background-color:  rgb(107 152 109) !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+.badge-success2 {
+    background-color: $greenColor !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+.custom_badge_brown{
+    background-color: #754401 !important;
+    color: white !important;
+    font-size: 10px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    font-weight: 700;
+    text-align: center;
+}
+.badge-brown{
+    background-color: #754401 !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+
+.badge-redd {
+    background-color: red !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+
+.badge-red {
+    background-color: red !important;
+    color: white !important;
+    font-size: 12px !important;
+    border-radius: 5px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+}
+
+.c-colorDetail {
+    color: #1d82d9 !important;
+}
+.c-colorGreen {
+    color: #078503 !important;
+}
+
+.enteteTable {
+    color: #1976d2 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif !important;
+    font-size: 12px !important;
+    padding: 0 0 0 16px !important;
+}
+
+.enteteTableReception {
+    color: #1976d2 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 13px !important;
+}
+
+.contentTable {
+    color: #000000 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 14px !important;
+}
+
+.titleRecap {
+    font-weight: bold;
+    font-size: 17px;
+    font-family: auto, sans-serif;
+}
+
+.fuse-widget-front-filtre {
+    background: #ffffff !important;
+    margin: 10px;
+    background-size: cover;
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    border-color: #00316c !important;
+}
+
+.fuse-widget-front-filtre-bis {
+    background: #ffffff !important;
+    margin: 10px;
+    background-size: cover;
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    border-color: #00316c !important;
+    margin-bottom: 50px;
+}
+
+.formInfFull {
+    width: 100%;
+}
+
+.formInfMiddle {
+    width: 49% !important;
+}
+
+.badge-success {
+    background-color: #1C7325 !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-weight: 700;
+}
+
+
+.status-success {
+    background-color: #5f9a65 !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+.status-brown {
+    background-color: #754401 !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+.status-success2 {
+    background-color: $greenColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+.status-success1 {
+    background-color: rgb(107 152 109) !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}.status-blue-clair {
+    background-color: rgb(104 123 179) !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+     padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-grey {
+    background-color: gray !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+.badge-grey {
+    background-color: gray !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-passed {
+    background-color: $passedColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-info {
+    background-color: $infoColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-primary {
+    background-color: $primaryColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-error {
+    background-color: $redColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-error-2 {
+    background-color: $redColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 5px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.badge-red {
+    background-color: $redColor !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.badge-blue {
+    background-color: #263360 !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}.badge-gray {
+    background-color: #525252 !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.badge-orange {
+    background-color: orange !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.badge-warning {
+    background-color: $warningColor !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-warning {
+    background-color: $warningColor !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.status-accent {
+    background-color: #1e293b !important;
+    color: $white;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+.ng-select .ng-select-container.ng-appearance-outline {
+    padding: 0 0.5em;
+    min-height: 56px;
+    input{
+        padding-left: 10px !important;
+    }
+}
+body.light .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label, body .light .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    top: 27px;
+    //display: flex;
+}
+.badge-primary {
+    background-color: $primaryColor !important;
+    color: $white;
+    font-size: 10px;
+    border-radius: 12px;
+    padding: 2px 10px !important;
+    font-weight: 700;
+}
+
+.field-detail {
+    display: flex;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+    mat-radio-group {
+        width: 50%;
+        padding: 20px 0;
+        /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+        mat-radio-button {
+            margin: 0 10px;
+        }
+    }
+
+    ng-select {
+        width: 50%;
+        padding-bottom: 5px !important;
+    }
+
+    .addProprio {
+        width: 100%;
+        margin-left: 22px;
+    }
+}
+
+.field-addBut {
+    display: flex;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    button {
+        width: 35%;
+        position: relative;
+        top: 10px;
+    }
+}
+
+.field {
+    display: flex;
+
+    mat-form-field {
+        width: 50%;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+    mat-radio-group {
+        width: 50%;
+        padding: 20px 0;
+        /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+        mat-radio-button {
+            margin: 0 10px;
+        }
+    }
+
+    ng-select {
+        width: 50%;
+        padding-bottom: 5px !important;
+    }
+
+    .addProprio {
+        width: 50%;
+        margin-left: 22px;
+    }
+}
+
+.formulaire {
+    margin-top: 20px;
+}
+
+.field-error {
+    color: $redColor;
+    font-size: 11px;
+    margin-top: -17px;
+    margin-left: 5px;
+}
+
+.fieldAll {
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.text-red {
+    color: $redColor !important;
+}
+
+.mes-btn {
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.submit-button {
+    width: 125px;
+    height: auto;
+    color: $white !important;
+    background: #00316c 0% 0% no-repeat padding-box !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+.submit-buttonRed {
+    width: 125px;
+    height: auto;
+    color: $white !important;
+    background-color: $redColor !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+.submit-buttonPrimary {
+    width: 125px;
+    height: auto;
+    color: $white !important;
+    background-color: $primaryColor !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+.c-tab-group {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-label-container {
+        border: 1px solid #80808070;
+        padding: 10px 24px !important;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-body-wrapper {
+        border: 1px solid #8080806b;
+    }
+}
+
+.event-form-dialog {
+    line-height: 30px;
+    overflow-y: scroll;
+}
+
+.event-form-dialog {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.event-form-dialog::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.swal2-popup {
+    width: 25em !important;
+}
+
+.swal2-icon {
+    width: 3em !important;
+    height: 3em !important;
+    margin: 1em auto .6em !important;
+}
+
+.swal2-icon .swal2-icon-content {
+    font-size: 2.75em !important;
+}
+
+.swal2-title {
+    padding: 0em 1em 0 !important;
+    font-size: 1.5em !important;
+}
+
+.swal2-styled.swal2-cancel {
+    background-color: $redColor !important;
+}
+
+.telephone .mat-form-field-empty {
+    padding-left: 50px;
+    padding-top: 4px;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.telephone .mat-form-field-label:not(.mat-form-field-empty) {
+    padding-left: 50px !important;
+}
+
+//start scrollbar style
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #01144fe6 !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+//end scrollbar style
+.c-colorHeader {
+    background: #004d72 !important;
+}
+
+.mat-mdc-tooltip {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    background: #767676 !important;
+}
+
+.mat-mdc-menu-panel {
+    min-width: 80px !important;
+}
+
+.c-bien {
+    font-size: 35px;
+    // width: max-content;
+    text-align: center;
+}
+
+.global {
+    background: #f3903d;
+    padding: 0px 20px 0px 10px;
+    border-radius: 25px;
+    font-size: 28px;
+}
+
+.sunu {
+    background: #f3903d;
+    padding: 0px 10px 0 18px;
+    //clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    margin-left: -10px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.c-conn {
+    color: var(--ColorDefault) !important;
+    text-align: center;
+}
+
+.widthRight {
+    width: 75% !important;
+}
+
+// new
+.c-posiDataSource {
+    margin: 0 25px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    margin-top: -37px;
+    border-radius: 8px !important;
+}
+.c-posiBalance {
+    margin: 0 25px;
+    margin-top: -37px;
+    border-radius: 8px !important;
+}
+.c-posiDataSourceF {
+    margin: 0 58px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    margin-top: -37px;
+    border-radius: 8px !important;
+}
+
+.backToolbar {
+    background: #F3F5F7 !important;
+}
+
+.c_formulaire {
+    border: 30px solid #f3f5f7;
+    border-left-color: var(--ColorDefault) !important;
+    border-right-width: 0px;
+
+}
+
+.c_title {
+    color: var(--ColorDefault) !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+}
+
+.closeButton {
+    background: #f3903d !important;
+
+    mat-icon {
+        color: #108dc9 !important;
+    }
+}
+
+.c_logoHome {
+    width: 80% !important;
+}
+
+.c_logoHomeMarge {
+    margin-top: -5px;
+}
+
+.c_cursor {
+    cursor: pointer;
+}
+
+.c_icon {
+    width: 85%;
+}
+
+//start swal
+.swal2-popup {
+    width: 25em !important;
+}
+
+.swal2-icon {
+    width: 3em !important;
+    height: 3em !important;
+    margin: 1em auto .6em !important;
+}
+
+.swal2-icon .swal2-icon-content {
+    font-size: 2.75em !important;
+}
+
+.swal2-title {
+    padding: 0em 1em 0 !important;
+    font-size: 1.5em !important;
+}
+
+.swal2-styled.swal2-cancel {
+    background-color: $redColor !important;
+}
+
+.swal2-popup {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 100%);
+    width: 25em !important;
+    max-width: 100%;
+    padding: 0 0 1.25em;
+    border: none;
+    border-radius: 15px !important;
+    background: #fff;
+    color: #545454;
+    font-family: inherit, sans-serif;
+    font-size: 1rem;
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #01144fe6 !important;
+    color: #fff;
+    font-size: 1em;
+}
+
+.swal2-styled.swal2-cancel {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #ff0000c4 !important;
+    color: #fff;
+    font-size: 1em;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #002e5b !important;
+    color: #002e5b !important;
+}
+
+.swal2-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.8em 1em 0;
+    color: #000000 !important;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+}
+
+.swal2-html-container {
+    z-index: 1;
+    justify-content: center;
+    margin: 1em 1.6em 0.3em;
+    padding: 0;
+    overflow: auto;
+    color: #002e5b !important;
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.swal2-popup {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 100%);
+    width: 32em !important;
+    max-width: 100%;
+    padding: 0 0 1.25em;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #545454;
+    font-family: inherit, sans-serif;
+    font-size: 12px !important;
+}
+
+.swal2-actions {
+    flex-direction: row-reverse;
+}
+
+.swal2-icon.swal2-info {
+    border-color: #999999 !important;
+    color: #999999 !important;
+}
+
+.swal2-html-container {
+    color: #000000 !important;
+}
+
+//end swal
+.c_btnAccount {
+    background: #dce2e9c7 !important;
+    margin-top: 14px;
+}
+.c_btnAccountF {
+    background: #1a2b60 !important;
+    &:hover {
+        background: #f3903d !important;
+        .c_icons {
+            color: #FFFFFF !important;
+        }
+    }
+}
+.c_btnAccountG {
+    background: #dce2e9c7 !important;
+    .c_icons {
+        color: #FFFFFF !important;
+    }
+    &:hover {
+        background: rgba(220, 226, 233, 0.34) !important;
+        .c_icons {
+            color: #1a2b60 !important;
+        }
+    }
+}
+.c_btnAccountR {
+    background: #dce2e9c7 !important;
+    .c_icons {
+        color: red !important;
+    }
+    &:hover {
+        background: rgba(220, 226, 233, 0.34) !important;
+        .c_icons {
+            color: red !important;
+        }
+    }
+}
+.c_icons{
+    color: #FFFFFF;
+}
+.c_btnAccount_attribut {
+    margin-top: 10px;
+}
+
+.background_avatarS {
+    background: var(--ColorDefault) !important;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.background_avatar {
+    background: var(--ColorDefault) !important;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px !important;
+    font-weight: bold;
+}
+
+.background_avatarNoImage {
+    background: #686868 !important;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px !important;
+    font-weight: bold;
+}
+
+//start color style dynamic
+.colorTextDefault {
+    color: var(--ColorDefault) !important;
+}
+
+.colorBackDefault {
+    background-color: var(--ColorDefault) !important;
+}
+
+.colorTextPrimary {
+    color: var(--ColorPrimary);
+}
+
+.colorBackPrimary {
+    background-color: var(--ColorPrimary) !important;
+}
+
+.colorTextSecondary {
+    color: var(--ColorSecondary) !important;
+}
+
+.colorBackSecondary {
+    background-color: var(--ColorSecondary) !important;
+}
+
+//end color style dynamic
+.c-backBtn {
+    background: var(--ColorDefault) !important;
+}
+
+.c-logo {
+    width: 12rem !important;
+    margin: 0 auto;
+}
+
+.c-imageLogin {
+    background-image: url("../assets/images/imageSignin.jpg");
+    background-size: cover;
+    background-position: 70% 0 !important;
+}
+
+fuse-vertical-navigation.fuse-vertical-navigation-appearance-compact .fuse-vertical-navigation-aside-wrapper {
+    background: #1a2b60 !important;
+    border-left-width: thin;
+}
+
+.submit-button-green {
+    border-radius: 20px !important;
+  //  background: var(--ColorDefault) !important;
+    color: #fff !important;
+    border: 2px solid var(--ColorDefault) !important;
+    &:hover {
+        background: #f3903d !important;
+        border: 2px solid #fff !important;
+        .textForms {
+            color: #fff;
+        }
+        }
+}
+
+.submit-button-renvoi {
+    border-radius: 20px !important;
+    background: #FFFFFF !important;
+    color: #f3903d !important;
+    border: 2px solid var(--ColorDefault) !important;
+    &:hover {
+        background: #f3903d !important;
+        border: 2px solid #fff !important;
+        .textForms-renvoi {
+            color: #fff !important;
+        }
+    }
+}
+.textForms-renvoi {
+    height: 14px;
+    text-align: center;
+    font: normal normal normal 17px/13px Microsoft Sans Serif, sans-serif;
+    letter-spacing: 0px;
+    color: var(--ColorDefault) !important;
+    opacity: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px !important;
+}
+
+.submit-button-red {
+    border-radius: 20px !important;
+    background: #E61A1A !important;
+    color: #E61A1A !important;
+    border: 2px solid !important;
+}
+
+.textForms {
+    height: 14px;
+    text-align: center;
+    font: normal normal normal 17px/13px Microsoft Sans Serif, sans-serif;
+    letter-spacing: 0px;
+    color: #fff;
+    opacity: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.textFormRed {
+    height: 14px;
+    text-align: center;
+    font: normal normal normal 17px/13px Microsoft Sans Serif, sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+// start custom tabs
+// end custom tabs
+fuse-vertical-navigation-aside-item .fuse-vertical-navigation-item-wrapper .fuse-vertical-navigation-item .fuse-vertical-navigation-item-icon {
+    opacity: 1 !important;
+    color: #FFFFFF !important;
+}
+
+fuse-vertical-navigation-aside-item .fuse-vertical-navigation-item-wrapper .fuse-vertical-navigation-item .fuse-vertical-navigation-item-title-wrapper .fuse-vertical-navigation-item-title {
+    opacity: 1 !important;
+    color: #FFFFFF !important;
+}
+
+fuse-vertical-navigation.fuse-vertical-navigation-appearance-compact .fuse-vertical-navigation-wrapper .fuse-vertical-navigation-content > fuse-vertical-navigation-aside-item .fuse-vertical-navigation-item-wrapper .fuse-vertical-navigation-item .fuse-vertical-navigation-item-title-wrapper .fuse-vertical-navigation-item-title {
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+}
+
+.c_mat_drawer {
+    border-radius: 12px !important;
+    margin: {
+        left: 16px;
+        top: 16px;
+    };
+    height: 733px;
+}
+
+#c_mat_drawerId {
+    height: 733px;
+}
+
+.c_color_active {
+    color: #00316c !important;
+}
+
+.c_padding {
+    padding-left: 32px !important;
+    padding-right: 20px !important;
+}
+
+.c_padding_v2 {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+}
+
+hr {
+    margin: 10px 0 !important;
+}
+
+
+#heighContentRightId {
+    height: 878px;
+}
+
+.custom_ajouter {
+    background: #00316c !important;
+}
+
+.floatRight {
+    height: 26px;
+    position: absolute;
+    right: 18px;
+}
+
+tr.mat-mdc-header-row {
+    height: 37px !important;
+}
+
+body.light .mat-mdc-header-cell,
+body .light .mat-header-cell {
+    color: white !important;
+    background: #01144fe6 !important;;
+}
+
+.titleFuseCard {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    color: #00316c !important;
+}
+
+.c-billetage {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.buttonBilletage {
+    width: auto;
+    height: auto;
+    color: #FFFFFF !important;
+    background-color: $redColor !important;
+}
+
+.c-posiDataSourceTr {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 8px !important;
+}
+
+.agencS {
+    display: flex;
+    justify-content: space-between;
+}
+
+.agenCs {
+    display: flex;
+    align-items: center;
+}
+
+.cLabel {
+    margin: 20px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    color: #00316c !important;
+}
+
+.cust_label {
+    margin: {
+        top: 18px;
+        right: 10px;
+    }
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #00316c !important;
+}
+
+.cust_labels {
+    margin: {
+        right: 10px;
+    }
+    font-size: 12px !important;
+
+}
+
+
+.menuAgence {
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-mdc-form-field .mat-mdc-form-field-infix {
+        height: 46px;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-infix {
+        padding: 3px;
+    }
+}
+
+.p-55 {
+    padding: 3.25rem !important;
+}
+
+.c_titles {
+    text-transform: uppercase;
+}
+
+.csAg {
+    line-height: 2;
+    font-size: 13px;
+
+    .nameAgence {
+    }
+
+    .valueAgence {
+        font-weight: bold;
+    }
+}
+
+.taiilePanel {
+    min-height: 500px !important;
+}
+.textFormP {
+    color: #000000;
+}
+
+.c-border-1 {
+    border: 2px solid #00316c !important;
+}
+
+.c-border-2 {
+    border: 2px solid #00316c !important;
+}
+
+.c-border-3 {
+    border: 1px solid #00316c !important;
+}
+
+.c-border-4 {
+    border: 1px solid #00316c !important;
+}
+
+.c-colornbre-1 {
+    color: #00316c !important;
+}
+
+.c-colornbre-2 {
+    color: #00316c !important;
+}
+
+.c-colornbre-3 {
+    color: #00316c !important;
+}
+
+.c-colornbre-4 {
+    color: #00316c !important;
+}
+
+.bg-card-1 {
+    background: #00316c;
+}
+
+.bg-card-2 {
+    background: #00316c;
+}
+
+.bg-card-3 {
+    background: #00316c;
+}
+
+.bg-card-4 {
+    background: #00316c;
+}
+
+.matdrawer {
+    border-radius: 9px !important;
+    height: 570px !important;
+}
+
+.textAgen {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #1a2b60;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.taiilePanel {
+    min-height: 500px !important;
+}
+
+.buttonTer {
+    border-radius: 5px;
+    background: #ffffff !important;
+    border: 1px solid #f3903d !important;
+}
+
+.textFormP {
+    color: #000000;
+}
+
+.c-borders-1 {
+    border: 2px solid #00316c !important;
+}
+
+.c-borders-2 {
+    border: 2px solid #00316c !important;
+}
+
+.c-borders-3 {
+    border: 1px solid #00316c !important;
+}
+
+.c-borders-4 {
+    border: 1px solid #00316c !important;
+}
+
+.c-colornbres-1 {
+    color: #00316c !important;
+}
+
+.c-colornbres-2 {
+    color: #00316c !important;
+}
+
+.c-colornbres-3 {
+    color: #00316c !important;
+}
+
+.c-colornbres-4 {
+    color: #00316c !important;
+}
+
+.bg-card-1 {
+    background: #00316c;
+}
+
+.bg-card-2 {
+    background: #00316c;
+}
+
+.bg-card-3 {
+    background: #00316c;
+}
+
+.bg-card-4 {
+    background: #00316c;
+}
+
+.matdrawer {
+    border-radius: 9px !important;
+    height: 570px !important;
+}
+
+.textAgen {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #1a2b60;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+body.light .mat-expansion-panel-header.mat-expanded,
+body .light .mat-expansion-panel-header.mat-expanded {
+    height: 25px !important;
+}
+
+.c_titreH {
+    color: #00316c !important;
+    font-size: 16px !important;
+}
+
+.c_back_header {
+    height: 35px !important;
+}
+
+.c_backToolbar {
+    background-color: #00316c !important;
+}
+
+.tableP {
+    table-layout: fixed;
+    width: 100% !important;
+    background-color: #ffff;
+}
+
+#tablePartenaire th,
+#tablePartenaire td {
+    padding: 6px !important;
+}
+
+.table-primP {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 2px !important;
+    color: #000000 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 15px !important;
+    text-align: right !important;
+    overflow-x: hidden;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.example-input {
+    border: 1px solid !important;
+    border-color: #00316c !important;
+    border-radius: 5px !important;
+    background-color: #f3f5f7 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", sans-serif;
+    font-size: 15px !important;
+    color: #1a1616 !important;
+    text-align: center !important;
+    width: 50%;
+    height: 25px;
+}
+
+#tablePartenaire table,
+#tablePartenaire thead tr th {
+    text-align: center !important;
+}
+
+.example-width {
+    font-size: 17px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.example-widths {
+    display: flex;
+    font-size: 17px;
+    border: 1px solid;
+}
+
+#tabFontGarantie table,
+#tabFontGarantie th {
+    background-color: #009036;
+    border: 1px solid #009036;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+
+#tabFontGarantie table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#tabFontGarantie table,
+#tabFontGarantie th,
+#tabFontGarantie td {
+    border: 1px solid #009036;
+    height: 30px;
+}
+
+.entete {
+    background: #00316c;
+    color: white;
+}
+
+.tetePage {
+    margin: 20px;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.csd {
+    text-align: center !important;
+    //padding: 10px;
+}
+
+.titleProduit {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", sans-serif;
+    color: #00316c !important;
+    font-size: 18px !important;
+    margin-bottom: 30px !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fraisTitle {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #00316c;
+    font-size: 14px;
+}
+
+.c-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.custom_recherche {
+    margin: {
+        top: -37px;
+        bottom: 60px;
+        left: 25px;
+        right: 25px;
+    };
+}

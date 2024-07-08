@@ -1,0 +1,53 @@
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.mat-tab-label {
+    color: #084480 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif !important;
+}
+
+.tableAction {
+    margin-left: -25px;
+}
+
+.posiTable {
+    height: 160px;
+}
+
+.c-image {
+    background-size: cover;
+    background-position: left;
+}
+
+.iconAction1 {
+    fill: aliceblue;
+}
+
+.contentColor {
+    color: #000000 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 14px !important;
+}
+
+.sizePage {
+    width: 100%;
+}
+
+//.titleFormat span {
+//    position: absolute;
+//    top: 59px;
+//    font-size: 22px;
+//    left: 60px;
+//}
+
+.posiIcon {
+    margin-bottom: 9px;
+}
+
+.event-dialog-role {
+    min-height: 16rem;
+}
+
+.c-paginator {
+    display: flex !important;
+    justify-content: flex-end !important;
+}

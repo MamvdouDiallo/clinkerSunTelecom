@@ -1,0 +1,8 @@
+<div class="flex flex-col w-full">
+
+    <div style="z-index: 0">
+        <tableau [pageIndex]="pageIndex" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [total]="length"
+            [coleurEntete]="headers" [entete]="headers" [data]="data" [actions]="btnActions"
+            (changePage)="pageChanged($event)"></tableau>
+    </div>
+</div>

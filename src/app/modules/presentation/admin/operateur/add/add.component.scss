@@ -1,0 +1,58 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
+    gap: 10px; /* Espacement entre les éléments */
+  }
+
+  .question {
+    grid-column: 1; /* Colonne 1 */
+    align-self: center; /* Centrer verticalement */
+  }
+
+  .choice {
+    grid-column: 2; /* Colonne 2 */
+    align-self: center; /* Centrer verticalement */
+  }
+
+  .actions {
+    grid-column: span 2; /* Étendre sur les deux colonnes */
+    text-align: center; /* Centrer horizontalement */
+  }
+
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container input {
+    padding-left: 40px; /* Ajustez cette valeur en fonction de l'espace requis pour l'icône du drapeau */
+  }
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container .ngx-mat-tel-input-country-selector {
+    position: absolute;
+    left: 10px; /* Ajustez cette valeur en fonction de la distance souhaitée du bord gauche */
+  }
+
+
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container input {
+    padding-left: 50px; /* Ajustez cette valeur en fonction de l'espace requis pour l'icône du drapeau */
+  }
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container .ngx-mat-tel-input-country-selector {
+    position: absolute;
+    left: 10px; /* Ajustez cette valeur en fonction de la distance souhaitée du bord gauche */
+  }
+
+  .ngx-mat-intl-tel-input .ngx-mat-tel-input-container {
+    position: relative;
+  }
+
+
+

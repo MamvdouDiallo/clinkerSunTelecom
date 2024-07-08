@@ -1,0 +1,257 @@
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.mat-tab-label {
+    color: #084480 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif !important;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    border: 2px solid #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #1a1616 !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-text-field__input {
+    background-color: #FFFFFF !important;
+    color: #1a1616 !important;
+}
+
+.enteteccColor {
+    display: flex;
+    color: #1a1616 !important;
+    margin-bottom: 11px;
+}
+
+body.light .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label, body .light .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    //top: 27px;
+    //display: flex !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: rgb(15 14 14 / 87%) !important;
+}
+
+.mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+    background-color: #FFFFFF !important;
+    color: #1a1616 !important;
+}
+
+.lab {
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    z-index: auto;
+}
+
+.c_cursors {
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.tableAction {
+    margin-left: -25px;
+}
+
+.posiTable {
+    height: 160px;
+}
+
+.c-image {
+    background-size: cover;
+    background-position: left;
+}
+
+.iconAction1 {
+    fill: aliceblue;
+}
+
+.iconAction2 {
+    fill: aliceblue;
+}
+
+.contentColor {
+    color: #000000 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    font-size: 14px !important;
+}
+
+.title-chargement {
+    margin: auto;
+}
+
+.sizePage {
+    width: 100%;
+}
+
+.titleFormat span {
+    position: absolute;
+    top: 55px;
+    font-size: 22px;
+    left: 80px;
+    font-family: ui-rounded;
+}
+
+.posiIcon {
+    margin-bottom: 9px;
+}
+
+.c-paginator {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.inputSearch {
+    color: #ffffff !important;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    border: 2px solid #FFFFFF !important;
+}
+
+.enteteccColor {
+    //color: #FFFFFF !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-text-field__input {
+    //color: #FFFFFF !important;
+}
+
+.lab {
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    z-index: auto;
+}
+
+.c-date {
+    width: 170px;
+    height: 75px;
+}
+
+.c-dateCompteGeneral {
+    width: 150px;
+    height: 75px;
+}
+
+.taille-cb-reseau {
+    width: 150px;
+    height: 75px;
+}
+
+.icon-color {
+    color: #FFFFFF !important;
+}
+
+.mat-mdc-select-value {
+    color: black !important;
+}
+
+.reseau .mat-mdc-text-field-wrapper {
+    background-color: white !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+}
+
+/*Manipulate background color on hover and focus*/
+.mat-mdc-form-field-focus-overlay {
+    background-color: white !important;
+}
+
+
+.reseau.mat-mdc-form-field {
+    width: 120px !important;
+    height: 75px !important;
+
+    ::ng-deep .mdc-text-field, mdc-text-field--outlined {
+        .mat-mdc-form-field-infix {
+            width: 120px !important;
+            text-align: center !important;
+        }
+
+        --mdc-outlined-text-field-outline-width: 0 !important;
+        --mdc-outlined-text-field-focus-outline-width: 0 !important;
+        --mdc-outlined-text-field-container-shape: 0 !important;
+        background-color: white !important;
+    }
+
+}
+
+.reseau-box.mat-mdc-checkbox {
+    ::ng-deep .mdc-form-field .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
+        border-color: black !important;
+        background-color: transparent !important;
+    }
+}
+.typeC{
+    background: white;
+    padding: 5px;
+    margin: 20px;
+    padding-bottom: 20p;
+    margin-bottom: 43px;
+    border-radius: 2px;
+}
+
+
+
+//css bouton export
+
+button {
+    height: 2.5em;
+    width: 10.5em;
+    border: none;
+    border-radius: 40px;
+    background-color: #fff;
+    border-color:#084480 ;
+    //cursor: pointer;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  button span {
+    z-index: 1;
+    display: inline-block;
+    background-color:  #084480;
+    height: 100%;
+    width: 100%;
+    border-radius: 40px;
+    color: #fff;
+    line-height: 2.5em;
+    font-size: 13px; /* Diminuer la taille de la police */
+    letter-spacing: 3px;
+    transition: all 0.2s;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button .container {
+    z-index: -1;
+    width: 100%;
+    height: 100%; /* Assurer que le conteneur couvre tout l'espace du bouton */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  button .container svg {
+    padding: 0 10px;
+  }
+
+  button:hover span {
+    width: 0;
+    opacity: 0;
+  }
+
+  button:hover .container {
+    z-index: 2;
+    opacity: 1;
+  }
+

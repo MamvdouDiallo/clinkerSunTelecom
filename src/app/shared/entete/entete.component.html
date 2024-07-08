@@ -1,0 +1,107 @@
+<div class="inset-0 flex flex-col min-w-0 sizePage">
+    <div
+        class="posiTable flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b dark dark:border-b c-image">
+        <h4 class="titleFormat">
+            <button type="button" mat-icon-button
+                class="mb-4 mat-mdc-tooltip-trigger c_btnAccountF mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base">
+                <mat-icon class="c_icons" svgIcon="heroicons_outline:chevron-double-right"></mat-icon>
+            </button>
+            <ng-container>
+                <span>{{ entete }}</span>
+            </ng-container>
+        </h4>
+        <div class="posiElement flex flex-shrink-0 items-center justify-center sm:mt-0 sm:ml-4">
+            <div class="flex filter custom_field dateBalance">
+
+                <!--rechercheglobal-->
+                @if (hasSearch) {
+                <form class="w-full  mx-1  max-w-[290px]">
+                    <label class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                        for="default-search">Search</label>
+                    <div class="relative">
+                        <div
+                            class="absolute inset-y-0 start-0 flex items-center justify-center ps-3 pointer-events-none">
+                            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                class="w-4 h-4 text-gray-500 dark:text-gray-400">
+                                <path d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" stroke-width="2"
+                                    stroke-linejoin="round" stroke-linecap="round" stroke="currentColor"></path>
+                            </svg>
+                        </div>
+                        <input required="" placeholder="Search" [(ngModel)]="rechercher" name="rechercher"
+                            class="block w-full p-2 py-2 ps-10 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 outline-none focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            id="default-search" type="search" />
+                        <button (click)="doSearch()"
+                            class="absolute end-2.5  w-[70px] bottom-1/2 translate-y-1/2 p-1 text-sm font-medium text-white bg-[#084480] rounded-lg border border-[#084480]  focus:outline-none focus:ring-blue-300">
+                            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                class="w-3 h-3">
+                                <path d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" stroke-width="2"
+                                    stroke-linejoin="round" stroke-linecap="round" stroke="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                }
+
+                <!--Finrechercheglobal-->
+                <button *ngIf="isSearch" type="button" class="mr-2 submit-buttonAdd" mat-icon-button>
+                    <mat-progress-spinner *ngIf="isSearch" class="circle-loader-down" color="#000000"
+                        [mode]="'indeterminate'" [strokeWidth]="4" [value]="2" [diameter]="20">
+                    </mat-progress-spinner>
+                </button>
+                <button (click)="doSearchCritere()" *ngIf="hasSearchCritere" matTooltip="Recherche par critère"
+                    type="button" mat-icon-button class="mb-4 ml-2 mat-mdc-tooltip-trigger c_btnAccountF mdc-icon-button
+                    mat-mdc-icon-button mat-unthemed mat-mdc-button-base">
+                    <mat-icon class="c_icons c_cursor" [svgIcon]="'filter_list'"></mat-icon>
+                </button>
+                <!--
+                <div *ngIf="hasExport" class="c_cursor ml-2 mb-4" matTooltip="Exporter au format PDF" (click)="doExport('pdf')">
+                <img src="assets/images/pdf-icon.png" alt="default image" class="c_icon">
+            </div>
+            <div *ngIf="hasExport" class="c_cursor ml-2 mb-4" matTooltip="Exporter au format EXCEL"
+                 (click)="doExport('excel')">
+                <img src="assets/images/xlsx-icon.png" alt="default image" class="c_icon">
+            </div>
+-->
+                <!--export-->
+                <button>
+                    <span>Exporter</span>
+                    <div class="container flex items-center justify-evenly">
+                        @if (hasExport) {
+                        <i class="fas fa-file-pdf fa-2x text-red-500 " matTooltip="Exporter au format PDF"
+                            (click)="doExport('pdf')"></i>
+                        }
+                        @if (hasExport) {
+                        <i class="fas fa-file-excel fa-2x text-green-500" matTooltip="Exporter au format EXCEL"
+                            (click)="doExport('excel')"></i>
+                        }
+                    </div>
+                </button>
+
+
+                <!--Finexport-->
+
+                <div *ngIf="hasExportGL" class="c_cursor ml-2 mb-4" matTooltip="Exporter au format PDF"
+                    (click)="doExportGL('pdf')">
+                    <img src="assets/images/pdf-icon.png" alt="default image" class="c_icon">
+                </div>
+                <mat-progress-spinner *ngIf="exporter" class="circle-loader-down" color="#1e293b"
+                    [mode]="'indeterminate'" [strokeWidth]="4" [value]="2" [diameter]="20">
+                </mat-progress-spinner>
+                <button (click)="doAddItems()"  *ngIf="hasAjout"  matTooltip="Ajouter un nouveau élément" type="button" mat-icon-button
+                    class="mb-4 mat-mdc-tooltip-trigger c_btnAccountF mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base">
+                    <mat-icon class="c_icons iconAction1 icon-color c_cursor"
+                        [svgIcon]="'heroicons_outline:plus-circle'" style="color: white;"></mat-icon>
+                </button>
+                <div *ngIf="hasUploadTemplate" class="c_cursor ml-4" matTooltip="Téléchager le template"
+                    (click)="dldbtn.click()">
+                    <button type="button" mat-icon-button
+                        class="mb-4 mat-mdc-tooltip-trigger c_btnAccountF mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base">
+                        <a #dldbtn hidden href="{{templateDeclaration}}" download></a>
+                        <mat-icon svgIcon="mat_outline:file_upload" class="c_icons"></mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,472 @@
+.circle-loader {
+    margin: 30px auto;
+}
+.grid-container {
+    display: grid;
+    background-color: #f5f5f591;
+    border-radius: 10px;
+    padding: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.grid-item {
+    margin-bottom: 20px;
+}
+
+.scrollable-panel {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+
+.text-loader {
+    margin: 30px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+//start scroll bar
+.dialog-content-wrapper {
+    // overflow: hidden;
+    overflow-y: initial !important
+}
+
+.content {
+    // overflow-y: hidden !important;
+    height: 76vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(30 41 59) !important;
+}
+
+ ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+//end scroll bar
+.c-mt-6 {
+    margin-top: 15px !important;
+}
+
+.user-avatar1 {
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: #0B71B8 solid 3px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: #C0C0BF 1px 1px 1px;
+}
+
+.user-avatar1:hover {
+    border: #0B71B8 dotted 3px;
+}
+
+#textarea textarea.mat-mdc-input-element {
+    padding: 2px 0;
+    margin: -2px 0;
+    height: 90px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.validate_button {
+    // padding: 8px 0;
+    flex-wrap: wrap;
+    min-height: 54px;
+    box-sizing: content-box;
+}
+
+.c-row {
+    overflow-x: hidden;
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    margin-top: 7px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+.c-container {
+    height: 34px;
+    line-height: 30px;
+    border-radius: 5px !important;
+    font-size: 19px;
+    margin-top: 2px;
+    width: 100%;
+    color: #1976d2 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+}
+
+.c-row {
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    margin-top: 7px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+}
+
+.accordion {
+    margin-bottom: 0px;
+}
+
+mat-expansion-panel {
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%) !important;
+    margin: 10px 10px 0 10px;
+    padding: 7px 0;
+}
+
+
+
+.decal .toggle__text::before,
+.decal .toggle__text::after {
+    left: 17px;
+}
+
+.c-top {
+    margin-top: 12px;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
+}
+
+::ng-deep.right-section-file {
+    text-align: right;
+    padding: 0;
+    margin: -40px;
+    position: absolute;
+    right: 4px;
+}
+
+.btn-success-delete {
+    border-color: #91571E !important;
+    color: #91571E !important;
+    background-color: transparent !important;
+    font-size: 16px;
+    box-shadow: 0 3px 5px 0 #91571E !important;
+}
+
+::ng-deep.right-section-close {
+    text-align: right;
+    padding: 0;
+    margin: -36px;
+    position: absolute;
+    right: 11px;
+}
+
+.container1 {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 100%;
+    color: #000000 !important;
+    //  background-color:#cdd5df;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+}
+
+.container1 .toggle__input {
+    padding-left: 30px;
+}
+
+.container2 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    color: #104274 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    padding-left: 40px !important;
+}
+
+.container3 {
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    color: #1976d2 !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+}
+
+.checkmark {
+    position: initial;
+    top: 6px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: rgb(204, 204, 204);
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 20px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transforms: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.toggler-item {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    top: 3px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.toggle {
+    --uiToggleSize: var(--toggleSize, 20px);
+    --uiToggleIndent: var(--toggleIndent, .4em);
+    --uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+    --uiToggleColor: var(--toggleColor, #0008);
+    --uiToggleDisabledColor: var(--toggleDisabledColor, #868e96);
+    --uiToggleBgColor: var(--toggleBgColor, #fff);
+    --uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+    --uiToggleArrowColor: var(--toggleArrowColor, #fff);
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}
+
+.toggle__input {
+    position: absolute;
+    left: -99999px;
+}
+
+.toggle__label {
+    display: flex;
+    cursor: pointer;
+    min-height: var(--uiToggleSize);
+    padding-left: calc(var(--uiToggleSize) + var(--uiToggleIndent));
+}
+
+.toggle__label:before,
+.toggle__label:after {
+    content: "";
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    font-size: var(--uiToggleSize);
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.toggle__label:before {
+    border: var(--uiToggleBorderWidth) solid var(--uiToggleColor);
+    z-index: 2;
+}
+
+.toggle__input:disabled~.toggle__label:before {
+    border-color: var(--uiToggleDisabledColor);
+}
+
+.toggle__input:focus~.toggle__label:before {
+    box-shadow: 0 0 0 2px var(--uiToggleBgColor), 0 0 0px 4px var(--uiToggleColor);
+}
+
+.toggle__input:not(:disabled):checked:focus~.toggle__label:after {
+    box-shadow: 0 0 0 2px var(--uiToggleBgColor), 0 0 0px 4px var(--uiToggleColor);
+}
+
+.toggle__input:not(:disabled)~.toggle__label:after {
+    background-color: #039be5;
+    opacity: 0;
+}
+
+.toggle__input:not(:disabled):checked~.toggle__label:after {
+    opacity: 1;
+}
+
+.toggle__text {
+    margin-left: 8px;
+    margin-top: -6px;
+}
+
+.icon-add {
+    font-size: 15px !important;
+    margin-top: -24px !important;
+    padding: 9px 10px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #91571e;
+    background: #fff;
+    margin-right: -34px;
+}
+
+
+/*
+The arrow size and position depends from sizes of square because I needed an arrow correct positioning from the top left corner of the element toggle
+*/
+
+.toggle__text:before {
+    content: "";
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    font-size: var(--uiToggleSize);
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--uiToggleArrowColor);
+    position: absolute;
+    top: .5428em;
+    left: 14px;
+    z-index: 3;
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
+}
+
+.toggle__input:not(:disabled):checked~.toggle__label .toggle__text:before {
+    width: .5em;
+    height: .25em;
+    border-left-width: var(--uiToggleArrowWidth);
+    border-bottom-width: var(--uiToggleArrowWidth);
+    will-change: width, height;
+    transition: width .1s ease-out .2s, height .2s ease-out;
+}
+
+.submit-buttonPrivilege {
+    width: 120px;
+    height: 37px;
+    background: #40b54b 0% 0% no-repeat padding-box !important;
+}
+
+.submit-buttonPrivilegeRed {
+    width: 120px;
+    height: 37px;
+    background-color: #d63d3e !important;
+}
+
+.textForm {
+    width: 142px;
+    height: 14px;
+    text-align: center;
+    font: normal normal normal 17px/13px Microsoft Sans Serif,sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.margin1 {
+    margin-left: 30px !important;
+}
+
+//.container1decal {
+//    margin-left: 35px !important;
+//}
+
+.container2decal {
+    //margin-left: 60px !important;
+    margin-left: 0px !important;
+    font-size: 13px;
+}
+
+//.container3decal {
+//    margin-left: 10px !important;
+//}
+
+.c-btnPriv {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-ordre1 {
+    position: absolute;
+    right: 22px;
+    top: -4px;
+    width: 28px;
+    background: #039be5;
+    text-align: center;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.c-ordre3 {
+    position: absolute;
+    right: 57px;
+    width: 28px;
+    background: #039be5;
+    text-align: center;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 11px;
+}
+
+.c-ordre2 {
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    width: 28px;
+    background: #039be5;
+    text-align: center;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}

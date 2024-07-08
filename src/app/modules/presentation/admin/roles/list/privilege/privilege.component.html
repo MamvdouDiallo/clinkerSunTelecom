@@ -1,0 +1,118 @@
+<!--<mat-toolbar class="mat-accent m-0 c-colorHeader">-->
+<!--    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center">-->
+<!--        <span class="title dialog-title">{{dialogTitle}}</span>-->
+<!--        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">-->
+<!--            <mat-icon>close</mat-icon>-->
+<!--        </button>-->
+<!--    </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+<mat-toolbar class="mat-accent m-0 backToolbar">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="c_formulaire">
+        <span class="c_title dialog-title">{{dialogTitle}}</span>
+        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog" class="closeButton">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="flex flex-col flex-auto min-w-10-0">
+    <div class="content">
+        <div class="m-6" *ngIf="privileges.length !== 0">
+            <form name="profilForm" [formGroup]="profilForm" novalidate>
+                <div class="grid-container">
+                    <div class="grid-item accordion" [class.opened]="rowOpened === privilege.libelle"
+                         *ngFor="let privilege of privileges">
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <label class="toggle c-container">
+                                        <input class="toggle__input" type="checkbox"
+                                               (click)="PrivilegesNiveau1(privilege, $event)"
+                                               [checked]="privilege.selected">
+                                        <span class="toggle__label">
+                                    <span class="toggle__text"><b>{{privilege?.libelle}}</b></span>
+                                    <span class="c-ordre1" *ngIf="privilege?.ordre !== null">{{privilege?.ordre}}</span>
+                                </span>
+                                    </label>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <div class="scrollable-panel">
+                                <mat-accordion [dragula]="'bag'">
+                                    <div *ngFor="let child of privilege?.children">
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    <label class="toggle container1 container1decal">
+                                                        <input class="toggle__input" type="checkbox"
+                                                               (click)="privilegesNiveau2(child, privilege, $event)"
+                                                               [checked]="child.selected">
+                                                        <span class="toggle__label">
+                                                    <span class="toggle__text"><b>{{child?.libelle | titlecase}}</b></span>
+                                                    <span class="c-ordre2" *ngIf="child?.ordre !== null">{{child?.ordre}}</span>
+                                                </span>
+                                                    </label>
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+
+                                            <div class="scrollable-panel">
+                                                <label class="toggle container2 container2decal"
+                                                       *ngFor="let grandchild of child?.children">
+                                                    <input class="toggle__input" type="checkbox"
+                                                           (click)="privilegesNiveau3(grandchild, child, privilege, $event)"
+                                                           [checked]="grandchild.selected">
+                                                    <span class="toggle__label">
+                                                <span class="toggle__text"><b>{{grandchild?.libelle}}</b></span>
+                                                <span class="c-ordre3" *ngIf="grandchild?.ordre !== null">{{grandchild?.ordre}}</span>
+                                            </span>
+                                                    <label class="toggle container3 container3decal"
+                                                           *ngFor="let grandchild2 of grandchild?.children">
+                                                        <input class="toggle__input" type="checkbox"
+                                                               (click)="privilegesNiveau4(grandchild2, grandchild, child, privilege, $event)"
+                                                               [checked]="grandchild2.selected">
+                                                        <span class="toggle__label">
+                                                    <span class="toggle__text">{{grandchild2?.libelle}}</span>
+                                                </span>
+                                                    </label>
+                                                </label>
+                                            </div>
+                                        </mat-expansion-panel>
+                                    </div>
+                                </mat-accordion>
+                            </div>
+                        </mat-expansion-panel>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div *ngIf="loaderVisiblerole">
+            <mat-progress-spinner class="circle-loader" color="#000000" [mode]="'indeterminate'" [strokeWidth]="4"
+                [value]="2" [diameter]="40">
+            </mat-progress-spinner>
+            <div class="text-loader">
+                Chargement en cours ...
+            </div>
+        </div>
+        <mat-progress-spinner *ngIf="desactiverButton" class="circle-loader" color="#000000" [mode]="'indeterminate'"
+            [strokeWidth]="4" [value]="2" [diameter]="40">
+        </mat-progress-spinner>
+
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="privileges.length!==0" class="validate_button">
+    <div mat-dialog-actions class="pr-right c-btnPriv">
+        <button mat-raised-button color="warn" [disabled]="desactiverButton" class="submit-buttonPrivilegeRed"
+            aria-label="VALIDER" (click)="matDialogRef.close()">
+            <span class="textForm">Annuler</span>
+        </button> &nbsp;&nbsp;
+        <button *ngIf="privilegeOld" [disabled]="desactiverButton" mat-raised-button color="accent"
+            class="submit-buttonPrivilege" aria-label="VALIDER" (click)="ajoutPrivilegeByrole('edit')">
+            <span class="textForm">Modifier</span>
+        </button> &nbsp;&nbsp;
+        <button *ngIf="!privilegeOld" [disabled]="desactiverButton" mat-raised-button color="accent"
+            class="submit-buttonPrivilege" aria-label="VALIDER" (click)="ajoutPrivilegeByrole('add')">
+            <span class="textForm">Ajouter</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+<mat-tab-group animationDuration="0ms" class="w-full">
+    <!--pletforme-->
+    <mat-tab label="Plateforme">
+        <div class="w-full">
+            <!-- Plateforme Technique Section -->
+            <div class="p-4 bg-card shadow rounded overflow-hidden mb-8">
+                <div class="text-3xl font-bold mb-6">Plateforme Technique</div>
+                <form [formGroup]="verticalStepperForm.get('step1')">
+                    <div class="flex flex-col p-2 sm:flex-row mb-4">
+                        <!-- Première ligne -->
+                        <div class="flex-auto sm:pr-3 mb-4 sm:mb-0">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="code_plateforme" placeholder="Code plateforme"
+                                    required>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:envelope'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step1.code_plateforme').hasError('required')">
+                                Code plateforme est requis
+                            </mat-error>
+                        </div>
+                        <div class="flex-auto sm:pl-3">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="site_web" placeholder="Site web" required>
+                                <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:link'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step1.site_web').hasError('required')">
+                                Site web est requis
+                            </mat-error>
+                        </div>
+                    </div>
+                    <!-- Deuxième ligne -->
+                    <div class="flex flex-col sm:flex-row mb-4">
+                        <div class="flex-auto sm:pr-3 mb-4 sm:mb-0">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="labelle" placeholder="Labelle" required>
+                                <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:user'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step1.labelle').hasError('required')">
+                                Labelle est requis
+                            </mat-error>
+                        </div>
+                        <div class="flex-auto sm:pl-3">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="email" placeholder="Email" required>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:envelope'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step1.email').hasError('required')">
+                                Email est requis
+                            </mat-error>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Infos Systeme Section -->
+            <div class="p-4 bg-card shadow rounded overflow-hidden">
+                <div class="text-3xl font-bold mb-6">Infos Systeme</div>
+                <form [formGroup]="verticalStepperForm.get('step2')">
+                    <div class="flex flex-col sm:flex-row mb-4">
+                        <!-- Première ligne -->
+                        <div class="flex-auto sm:pr-3 mb-4 sm:mb-0">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="auteur" placeholder="Crée par" required>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step2.auteur').hasError('required')">
+                                Crée par est requis
+                            </mat-error>
+                        </div>
+                        <div class="flex-auto sm:pl-3 mb-4 sm:mb-0">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="date_creation" [matDatepicker]="picker"
+                                    placeholder="Crée le" required>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:calendar'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step2.date_creation').hasError('required')">
+                                Crée le est requis
+                            </mat-error>
+                        </div>
+                    </div>
+                    <!-- Deuxième ligne -->
+                    <div class="flex flex-col sm:flex-row mb-4">
+                        <div class="flex-auto sm:pr-3 mb-4 sm:mb-0">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="modifie_par" placeholder="Modifié par" required>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step2.modifie_par').hasError('required')">
+                                Modifié par est requis
+                            </mat-error>
+                        </div>
+                        <div class="flex-auto sm:pl-3">
+                            <mat-form-field class="w-full">
+                                <input matInput formControlName="modifie_le" [matDatepicker]="picker1"
+                                    placeholder="Modifié le" required>
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:calendar'"></mat-icon>
+                            </mat-form-field>
+                            <mat-error *ngIf="verticalStepperForm.get('step2.modifie_le').hasError('required')">
+                                Modifié le est requis
+                            </mat-error>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Boutons de navigation -->
+        <div class="flex justify-end p-5">
+
+            <button class="px-8 py-1 bg-green-600 submit-button-green text-white" type="button" >
+                Modifié
+            </button>
+            <button class="px-8 mx-2 bg-red-600 submit-button-renvoi text-white"  type="button" >
+                Supprimé
+            </button>
+
+
+        </div>
+
+
+
+
+    </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Matlable2-->
+
+
+    <mat-tab label="Les comptes de la plateforme">
+
+
+        <tableau [pageIndex]="pageIndex" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [total]="length"
+            [coleurEntete]="headersComptes" [entete]="headersComptes" [data]="comptes" [actions]="btnActions"
+            (changePage)="pageChanged($event)"></tableau>
+
+
+
+    </mat-tab>
+    <!--Matlable2-->
+
+    <!--Matlable3-->
+
+    <mat-tab label="Les partages de commission">
+
+
+        <tableau [pageIndex]="pageIndex" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [total]="length"
+            [coleurEntete]="headersCommissions" [entete]="headersCommissions" [data]="services" [actions]="btnActions"
+            (changePage)="pageChanged($event)"></tableau>
+
+
+
+
+    </mat-tab>
+
+
+    <!--Matlable3-->
+</mat-tab-group>

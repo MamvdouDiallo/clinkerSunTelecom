@@ -1,0 +1,85 @@
+<mat-toolbar class="">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="">
+        <span class="c_title dialog-title">{{ dialogTitle }}</span>
+        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog" class="closeButton">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="flex flex-col flex-auto min-w-full max-w-3xl p-2 md:p-4 text-center">
+    <form [formGroup]="basicInfoForm" class="flex w-full flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden">
+        <div class="flex flex-col items-center mb-4">
+            <mat-label>Logo de la plateforme</mat-label>
+            <input type="file" accept="image/*" (change)="onFileChange($event)" #fileInput class="hidden">
+            <div class="logo-container" (click)="fileInput.click()">
+                <img *ngIf="imageSrc; else defaultLogo" [src]="imageSrc" alt="Logo Preview"
+                    class="w-24 h-24 object-contain rounded-full">
+                <ng-template #defaultLogo>
+                    <mat-icon class="w-24 h-24">cloud_upload</mat-icon>
+                </ng-template>
+            </div>
+            <mat-error *ngIf="logo?.invalid && (logo?.dirty || logo?.touched)">
+                <span *ngIf="logo?.errors?.required">Le logo de la plateforme est requis.</span>
+            </mat-error>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <mat-form-field class="flex-auto">
+                <mat-label>Libelle de la plateforme</mat-label>
+                <input matInput placeholder="Libelle de la plateforme" formControlName="libelle">
+                <mat-icon class="icon-size-5" matPrefix svgIcon="heroicons_outline:pencil"></mat-icon>
+                <mat-error *ngIf="libelle?.invalid && (libelle?.dirty || libelle?.touched)">
+                    <span *ngIf="libelle?.errors?.required">Le libelle de la plateforme est requis.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="flex-auto">
+                <mat-label>Code plateforme</mat-label>
+                <input matInput placeholder="Code plateforme" formControlName="code">
+                <mat-icon class="icon-size-5" matPrefix svgIcon="heroicons_outline:variable"></mat-icon>
+                <mat-error *ngIf="code?.invalid && (code?.dirty || code?.touched)">
+                    <span *ngIf="code?.errors?.required">Code plateforme est requis.</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="flex-auto">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Email Address" formControlName="email">
+                <mat-icon class="icon-size-5" matPrefix svgIcon="heroicons_solid:envelope"></mat-icon>
+                <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <span *ngIf="email?.errors?.required">L'adresse email est requise.</span>
+                    <span *ngIf="email?.errors?.email">L'adresse email doit être valide.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="flex-auto">
+                <mat-label>Site web</mat-label>
+                <input matInput placeholder="Site web" formControlName="site_web">
+                <mat-icon class="icon-size-5" matPrefix svgIcon="heroicons_outline:globe-americas"></mat-icon>
+                <mat-error *ngIf="siteWeb?.invalid && (siteWeb?.dirty || siteWeb?.touched)">
+                    <span *ngIf="siteWeb?.errors?.required">Le site web est requis.</span>
+                    <span *ngIf="siteWeb?.errors?.pattern">L'URL doit être valide (commençant par http:// ou https://).</span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div *ngIf="isLoading">
+        <mat-progress-spinner class="circle-loader" color="#000000" [mode]="'indeterminate'" [strokeWidth]="4"
+            [value]="2" [diameter]="40">
+        </mat-progress-spinner>
+    </div>
+    <div mat-dialog-actions class="flex items-center justify-center space-x-4 mt-4 cfds">
+        <button mat-raised-button matDialogClose class="submit-button-red" aria-label="VALIDER">
+            <span class="textFormRed">Annuler</span>
+        </button>
+        <button *ngIf="action === 'new'" [disabled]="isLoading" (click)="checkRecap('new')" mat-raised-button
+            class="submit-button-green bg-black" aria-label="VALIDER">
+            <span class="textForms">Ajouter</span>
+            <mat-progress-spinner *ngIf="isLoading" [diameter]="10" [mode]="'indeterminate'"></mat-progress-spinner>
+        </button>&nbsp;
+        <button *ngIf="action === 'edit'" [disabled]="isLoading" (click)="checkRecap('edit')" mat-raised-button
+            [color]="'accent'" class="submit-button-green" aria-label="VALIDER">
+            <span class="textForms">Modifier</span>
+        </button>&nbsp;
+    </div>
+</div>
+

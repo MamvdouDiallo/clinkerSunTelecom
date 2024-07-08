@@ -1,0 +1,331 @@
+<mat-toolbar class="mat-accent m-0  rounded-lg">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="">
+        <span class="c_title dialog-title">{{ dialogTitle }}</span>
+        <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog" class="closeButton">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="flex flex-col flex-auto min-w-10-0 p-2 md:p-4">
+    <form [formGroup]="initForm" class="event-form w-100-p">
+        <mat-horizontal-stepper #stepper>
+            <mat-step label="Identifiant opérateur de transfert">
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Code opérateur du transfert
+                        </mat-label>
+                        <input class="typeTitle" matInput type="text" name="raisonSociale" formControlName="code" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Plateforme technique
+                        </mat-label>
+                        <input class="typeTitle" matInput type="text" name="sigle" formControlName="plateforme" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Labelle de l'opérateur
+                        </mat-label>
+                        <input matInput type="text" name="ninea" formControlName="labelle" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Adresse
+                        </mat-label>
+                        <input class="typeTitle" matInput type="text" name="adresse" formControlName="adresse" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Email
+                        </mat-label>
+                        <input matInput type="email" name="capital" formControlName="email" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Ville
+                        </mat-label>
+                        <input matInput type="text" name="ville" formControlName="ville" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex gap-2 relative">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Site web
+                        </mat-label>
+                        <input matInput type="text" name="capital" formControlName="site" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Téléphone
+                        </mat-label>
+                        <input matInput type="text" name="telephone" formControlName="telephone" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field> -->
+                    <!--                        <mat-label class="enteteccColor">Téléphone</mat-label>-->
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2"  fxFlex="50" appearance="outline">
+                        <!-- <mat-label class="enteteccColor">Téléphone</mat-label> -->
+                        <ngx-mat-intl-tel-input
+                          [preferredCountries]="['sn', 'fr']"
+                          [enablePlaceholder]="true"
+                          [enableSearch]="true"
+                          name="Téléphone"
+                          describedBy="Téléphone"
+                          formControlName="phoneNumber"
+                        ></ngx-mat-intl-tel-input>
+                        <mat-error *ngIf="initForm.get('phoneNumber').hasError('required')">Le champs est obligatoire</mat-error>
+                      </mat-form-field>
+                    <div class="error text-red-700 absolute left-[50%] top-14"
+                    *ngIf="
+                    initForm.get('phoneNumber').touched &&
+                    initForm.get('phoneNumber').invalid &&
+                    !initForm.get('phoneNumber').hasError('required')
+                  ">
+                        Le numéro est invalide
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Code devise
+                        </mat-label>
+                        <input matInput type="text" name="code_devise" formControlName="code_devise" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Gestion de l'espace client
+                        </mat-label>
+                        <input matInput type="text" name="gestion" formControlName="gestion" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button mat-raised-button matDialogClose class="submit-buttonRed" matStepperPrevious type="button">
+                        <span class="textForm">Annuler</span>
+                    </button>&nbsp;
+                    <button [disabled]="!firstStep()" mat-raised-button class="submit-button" aria-label="VALIDER"
+                        matStepperNext type="button">
+                        <span class="textForm">Suivant</span>
+                    </button>&nbsp;
+                </div>
+            </mat-step>
+            <mat-step label="Contact principal Gestion des SMS et Cryptage
+            ">
+            <div class="flex gap-2 relative">
+                <mat-form-field class="fuse-mat-dense w-1/2 mt-2"  fxFlex="100" appearance="outline">
+                    <mat-label class="enteteccColor">Téléphone du contact principal</mat-label>
+                    <ngx-mat-intl-tel-input
+                      [preferredCountries]="['sn', 'fr']"
+                      [enablePlaceholder]="true"
+                      [enableSearch]="true"
+                      name="Téléphone"
+                      describedBy="Téléphone"
+                      formControlName="telephoneContactPrincipal"
+                    ></ngx-mat-intl-tel-input>
+                    <mat-error *ngIf="initForm.get('telephoneContactPrincipal').hasError('required')">Le champs est obligatoire</mat-error>
+                  </mat-form-field>
+                <div class="error text-red-700 absolute  top-14"
+                *ngIf="
+                initForm.get('telephoneContactPrincipal').touched &&
+                initForm.get('telephoneContactPrincipal').invalid &&
+                !initForm.get('telephoneContactPrincipal').hasError('required')
+              ">
+                    Le numéro est invalide
+                </div>
+
+            </div>
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Contact principal
+                        </mat-label>
+                        <input matInput type="text" name="contactPrincipal" formControlName="contactPrincipal" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Email du contact Principal
+                        </mat-label>
+                        <input class="typeTitle" matInput type="text" name="emailContactPrincipal"
+                            formControlName="emailContactPrincipal" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    Gestion des SMS
+                </div>
+
+                <div class="flex gap-2">
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Code établissement SMS:
+                        </mat-label>
+                        <input matInput type="text" name="codeEtabSms" formControlName="codeEtabSms" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="fuse-mat-dense w-1/2 mt-2" appearance="outline">
+                        <mat-label class="enteteccColor">Code service SMS:
+                        </mat-label>
+                        <input class="typeTitle" matInput type="text" name="codeSerSms" formControlName="codeSerSms" />
+                        <mat-error>Le champs est obligatoire</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    Cryptage
+                </div>
+                <div class="flex gap-2">
+
+                    <mat-label class="enteteccColor">Activation du cryptage:
+                    </mat-label>
+                    <mat-radio-group formControlName="activationCriptage">
+                        <mat-radio-button value="oui">Oui</mat-radio-button>
+                        <mat-radio-button value="non">Non</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button mat-raised-button class="submit-buttonRed" matStepperPrevious type="button">
+                        <span class="textForm">Retour</span>
+                    </button>&nbsp;
+                    <button [disabled]="!secondStep()" mat-raised-button class="submit-button" aria-label="VALIDER"
+                        matStepperNext type="button">
+                        <span class="textForm">Suivant</span>
+                    </button>&nbsp;
+                </div>
+
+            </mat-step>
+
+            <mat-step label="Paramètres batch">
+                <div class="grid-container">
+                    <div class="question">Lancement batch automatique :</div>
+                    <div class="choice">
+                        <mat-radio-group formControlName="choix">
+                            <mat-radio-button value="oui">Oui</mat-radio-button>
+                            <mat-radio-button value="non">Non</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="question">Activation du batch de prélèvement impayé :</div>
+                    <div class="choice">
+                        <mat-radio-group formControlName="choix">
+                            <mat-radio-button value="oui">Oui</mat-radio-button>
+                            <mat-radio-button value="non">Non</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="question">Activation du batch de prélèvement impayé journalier :</div>
+                    <div class="choice">
+                        <mat-radio-group formControlName="choix">
+                            <mat-radio-button value="oui">Oui</mat-radio-button>
+                            <mat-radio-button value="non">Non</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="question">Lancement automatique batch des statistiques :</div>
+                    <div class="choice">
+                        <mat-radio-group formControlName="choix">
+                            <mat-radio-button value="oui">Oui</mat-radio-button>
+                            <mat-radio-button value="non">Non</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="actions">
+                        <div class="flex justify-center gap-4">
+                            <button mat-raised-button class="submit-buttonRed" matStepperPrevious type="button">
+                                <span class="textForm">Retour</span>
+                            </button>&nbsp;
+                            <button [disabled]="firstStep()" mat-raised-button class="submit-button"
+                                aria-label="VALIDER" matStepperNext type="button">
+                                <span class="textForm">Suivant</span>
+                            </button>&nbsp;
+                        </div>
+                    </div>
+                    <mat-step label="Récapitulatif">
+                        <div>
+                            <mat-accordion>
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Identifiant opérateur de transfert
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <div class="recap-container">
+                                        <div><strong>Code opérateur:</strong> {{ initForm.get('code').value }}</div>
+                                        <div><strong>Plateforme technique:</strong> {{ initForm.get('plateforme').value
+                                            }}</div>
+                                        <div><strong>Labelle de l'opérateur:</strong> {{ initForm.get('labelle').value
+                                            }}</div>
+                                        <div><strong>Adresse:</strong> {{ initForm.get('adresse').value }}</div>
+                                        <div><strong>Email:</strong> {{ initForm.get('email').value }}</div>
+                                        <div><strong>Ville:</strong> {{ initForm.get('ville').value }}</div>
+                                        <div><strong>Site web:</strong> {{ initForm.get('site').value }}</div>
+                                        <div><strong>Téléphone:</strong> {{ initForm.get('telephone').value }}</div>
+                                        <div><strong>Code devise:</strong> {{ initForm.get('code_devise').value }}</div>
+                                        <div><strong>Gestion de l'espace client:</strong> {{
+                                            initForm.get('gestion').value }}</div>
+                                        <div><strong>Pays:</strong> {{ initForm.get('pays').value }}</div>
+                                    </div>
+                                </mat-expansion-panel>
+
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Contact principal Gestion des SMS et Cryptage
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <div class="recap-container">
+                                        <div><strong>Contact principal:</strong> {{
+                                            initForm.get('contactPrincipal').value }}</div>
+                                        <div><strong>Email du contact Principal:</strong> {{
+                                            initForm.get('emailContactPrincipal').value }}</div>
+                                        <div><strong>Téléphone du contact principal:</strong> {{
+                                            initForm.get('telephoneContactPrincipal').value }}</div>
+                                        <div><strong>Code établissement SMS:</strong> {{
+                                            initForm.get('codeEtabSms').value }}</div>
+                                        <div><strong>Code service SMS:</strong> {{ initForm.get('codeSerSms').value }}
+                                        </div>
+                                        <div><strong>Activation du cryptage:</strong> {{
+                                            initForm.get('activationCriptage').value }}</div>
+                                    </div>
+                                </mat-expansion-panel>
+
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            Paramètres batch
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <div class="recap-container">
+                                        <div><strong>Lancement batch automatique:</strong> {{
+                                            initForm.get('choix').value }}</div>
+                                        <div><strong>Activation du batch de prélèvement impayé:</strong> {{
+                                            initForm.get('choix').value }}</div>
+                                        <div><strong>Activation du batch de prélèvement impayé journalier:</strong> {{
+                                            initForm.get('choix').value }}</div>
+                                        <div><strong>Lancement automatique batch des statistiques:</strong> {{
+                                            initForm.get('choix').value }}</div>
+                                    </div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button mat-raised-button class="submit-buttonRed" matStepperPrevious type="button">
+                                <span class="textForm">Retour</span>
+                            </button>&nbsp;
+                            <button mat-raised-button class="submit-button" (click)="submitForm()" type="button">
+                                <span class="textForm">Soumettre</span>
+                            </button>&nbsp;
+                        </div>
+                    </mat-step>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </form>
+
+
+
+
+</div>

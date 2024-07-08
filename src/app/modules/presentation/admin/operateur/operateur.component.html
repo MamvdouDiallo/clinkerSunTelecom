@@ -1,0 +1,6 @@
+<div class="w-full">
+    <entete entete={{title}} [hasSearch]="true" [hasSearchCritere]="true" [hasExport]="true" [hasAjout]="hasAdd"
+        (rechercherGlobal)="rechercherGlobal($event)" (exportPDF)="exportAs($event)" (addItem)="ajoutUtilisateur()"
+        (rechercherCritere)="filterList()"></entete>
+    <app-list></app-list>
+</div>

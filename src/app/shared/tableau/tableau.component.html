@@ -1,0 +1,68 @@
+<div class="flex flex-col overflow-x-auto w-full">
+    <table aria-label="client" class="service-table" mat-table matSort [matSortActive]="'libelle'"
+        [matSortDisableClear]="true" [matSortDirection]="'asc'" [multiTemplateDataRows]="true" [dataSource]="dataSource"
+        [trackBy]="trackByFn">
+        <ng-container [matColumnDef]="entete[i]['th']" *ngFor="let item of entete;let i=index">
+            <th class="w-40 entteTable" mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+                {{ item['th'] }}
+            </th>
+            <td class="pr-8 truncate contentTable" mat-cell *matCellDef="let element">
+                <span
+                    [matTooltip]="(element[item['td']])?.length > 23  ? element[item['td']] : item['el'] ? element[item['td']] ? element[item['td']][item['el']]:'' : ''"
+                    class="{{getBadgeClass(element,entete[i]) || getBadgeStatut(element,entete[i])}}">
+                    {{
+                    item['el'] ?
+                    item['type'] == 'n' ? (element[item['td']][item['el']] | number : '1.0-0':'fr') :
+                    element[item['td']] ? (element[item['td']][item['el']])?.length > 23 ?
+                    (element[item['td']][item['el']] | slice : 0 : 23) + '...' : element[item['td']][item['el']] : '' :
+                    item['type'] == 'n' ? (element[item['td']] | number : '1.0-0':'fr') :
+
+                    item['el'] ?
+                    item['type'] == 'd' ? (element[item['td']][item['el']] | date: 'dd-MM-yyyy') : element[item['td']] ?
+                    element[item['td']][item['el']] : '' :
+                    item['type'] == 'd' ? (element[item['td']] | date: 'dd-MM-yyyy') :
+                    item['el'] ?
+                    item['type'] == 's' ? (element[item['td']][item['el']]) : element[item['td']] ?
+                    element[item['td']][item['el']] : '' :
+                    item['type'] == 's' ? (element[item['td']]) :
+                    item['el'] ?
+                    item['type'] == 'titeCase' ? (element[item['td']][item['el']] | titlecase) : element[item['td']] ?
+                    element[item['td']][item['el']] : '' :
+                    item['type'] == 'titeCase' ? (element[item['td']] | titlecase) :
+
+
+                    element[item['td']] === true ? 'oui' :
+
+                    element[item['td']] === false ? 'non' :
+
+                    (element[item['td']])?.length > 23 ? (element[item['td']] | slice : 0 : 23) + '...' :
+                    element[item['td']]
+                    }}
+                </span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+            <th class="w-40 enteteTable" mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+                Action
+            </th>
+            <td class="pr-4" mat-cell *matCellDef="let element">
+                <p class="flex">
+                    <button class="pl-2" [matTooltip]="actionBtn.title"
+                        [disabled]="actionBtn.isDisabled || (actionBtn.constraint ? actionBtn.constraint(element) : false)"
+                        (click)="actionBtn.action(element)" *ngFor="let actionBtn of actions" mat-icon-button>
+                        <mat-icon class="iconAction {{actionBtn.couleur}} {{actionBtn.size}}"
+                            [svgIcon]="actionBtn.icon"></mat-icon>
+                    </button>
+                </p>
+            </td>
+        </ng-container>
+        <tr class="shadow" mat-header-row *matHeaderRowDef="mapObject(entete); sticky: true"></tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-hover" mat-row *matRowDef="let role; columns: mapObject(entete);">
+        </tr>
+
+    </table>
+</div>
+<mat-paginator *ngIf="dataSource.data?.length!=0" class="paginator c-paginator" #paginator (page)="pageChanged($event)"
+    [length]="total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
